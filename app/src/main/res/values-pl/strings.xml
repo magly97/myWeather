@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyWeather</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="menu_add_city">Dodaj miasto</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_settings">Ustawienia</string>
+    <string name="navigation_drawer_open">otowrz</string>
+    <string name="navigation_drawer_close">zamknij</string>
+    <string name="actual_lang">pl</string>
+</resources>
