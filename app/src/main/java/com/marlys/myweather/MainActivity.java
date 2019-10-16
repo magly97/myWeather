@@ -11,10 +11,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.marlys.myweather.adapter.CityWeatherAdapter;
 import com.marlys.myweather.api.OpenWeatherMap;
 import com.marlys.myweather.api.RetrofitConf;
-import com.marlys.myweather.model.City;
 import com.marlys.myweather.model.CityWeather;
-import com.marlys.myweather.model.Temp;
-import com.marlys.myweather.model.Weather;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -24,11 +21,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
+import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,8 +35,10 @@ public class MainActivity extends AppCompatActivity
 
     private ArrayList<CityWeather> cityWeatherList;
     private RecyclerView recyclerView;
+    private ListView listView;
     private OpenWeatherMap openWeatherMap;
     private CityWeatherAdapter cityWeatherAdapter;
+    private String lang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +53,16 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        lang = getString(R.string.actual_lang);
+
         cityWeatherList = new ArrayList<>();
         openWeatherMap = RetrofitConf.getInstance().create(OpenWeatherMap.class);
 
         recyclerView = findViewById(R.id.recycle_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         addCity("Krakow");
+        addCity("Warszawa");
+
         cityWeatherAdapter = new CityWeatherAdapter(this, cityWeatherList);
         recyclerView.setAdapter(cityWeatherAdapter);
     }
@@ -102,7 +104,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void addCity(String cityName) {
-        Call<CityWeather> cityWeather = openWeatherMap.getWeatherCity(cityName, RetrofitConf.KEY, "metric", 5);
+        Call<CityWeather> cityWeather = openWeatherMap.getWeatherCity(cityName, RetrofitConf.KEY, "metric", 1, lang);
         cityWeather.enqueue(new Callback<CityWeather>() {
             @Override
             public void onResponse(Call<CityWeather> call, Response<CityWeather> response) {
@@ -125,33 +127,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public ArrayList<CityWeather> getCityWeatherList() {
-        ArrayList<CityWeather> cityWeathers = new ArrayList<>();
-        CityWeather cityWeather = new CityWeather();
-
-        City city = new City();
-        city.setCountry("Pl");
-        city.setName("Zamosc");
-        city.setId(1);
-
-        Temp temp = new Temp();
-        temp.setDay(10);
-        temp.setMax(19);
-        temp.setMin(10);
-
-        List<Weather> weathers =  new ArrayList<>();
-        Weather weather = new Weather();
-        weather.setClouds(10.0f);
-        weather.setDate(100000);
-        weather.setDeg(10.0f);
-        weather.setSpeed(100);
-        weather.setSunrise(1571072836);
-        weather.setSunset(1571072836);
-        weather.setTemp(temp);
-        weathers.add(weather);
-        cityWeather.setCity(city);
-        cityWeather.setWeeklyWeather(weathers);
-        cityWeathers.add(cityWeather);
-        return cityWeathers;
+        return cityWeatherList;
     }
 
     public void setCityWeatherList(ArrayList<CityWeather> cityWeatherList) {

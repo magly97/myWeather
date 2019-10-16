@@ -12,7 +12,7 @@ public interface OpenWeatherMap {
     Call<CityWeather> getWeatherCity (@Query("q") String city,
                                       @Query("APPID") String key,
                                       @Query("units") String units,
-                                      @Query("cnt") int days
-                                      );
+                                      @Query("cnt") int days,
+                                      @Query("lang") String lang);
 
 }

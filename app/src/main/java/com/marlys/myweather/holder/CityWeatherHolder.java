@@ -7,9 +7,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.marlys.myweather.ItemClickListener;
 import com.marlys.myweather.R;
 
-public class CityWeatherHolder extends RecyclerView.ViewHolder {
+public class CityWeatherHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     private ImageView imageView;
     private TextView cityName;
@@ -19,6 +20,7 @@ public class CityWeatherHolder extends RecyclerView.ViewHolder {
     private TextView weatherMinTemp;
     private TextView weatherSunrise;
     private TextView weatherSunset;
+    private ItemClickListener itemClickListener;
 
     public CityWeatherHolder(@NonNull View itemView) {
         super(itemView);
@@ -31,7 +33,13 @@ public class CityWeatherHolder extends RecyclerView.ViewHolder {
         this.weatherMinTemp = itemView.findViewById(R.id.weather_min_temp);
         this.weatherSunrise = itemView.findViewById(R.id.weather_sunrise_time);
         this.weatherSunset = itemView.findViewById(R.id.weather_sunset_time);
+        itemView.setOnClickListener(this);
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        this.itemClickListener.onItemClickListener(view, getLayoutPosition());
     }
 
     public ImageView getImageView() {
@@ -97,4 +105,14 @@ public class CityWeatherHolder extends RecyclerView.ViewHolder {
     public void setWeatherSunset(TextView weatherSunset) {
         this.weatherSunset = weatherSunset;
     }
+
+    public ItemClickListener getItemClickListener() {
+        return itemClickListener;
+    }
+
+    public void setItemClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+
+
 }
