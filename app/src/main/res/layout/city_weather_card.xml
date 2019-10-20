@@ -45,7 +45,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/weather_desc"
-                app:layout_constraintVertical_bias="0.719">
+                app:layout_constraintVertical_bias="0.0">
 
                 <ImageView
                     android:id="@+id/weather_image"
@@ -72,7 +72,7 @@
                     android:id="@+id/weather_sunrise"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginStart="184dp"
+                    android:layout_marginStart="170dp"
                     android:layout_marginBottom="2dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -128,17 +128,14 @@
                     android:id="@+id/weather_min_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="46dp"
+                    android:layout_marginStart="45dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="68dp"
-                    android:layout_marginBottom="13dp"
                     android:text="250°"
                     android:textSize="25sp"
-                    app:layout_constraintBottom_toTopOf="@+id/weather_sunset"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/weather_temp"
-                    app:layout_constraintTop_toBottomOf="@+id/weather_max_temp"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintTop_toBottomOf="@+id/weather_max_temp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>

@@ -9,4 +9,30 @@
     <string name="menu_add_city">Add city</string>
     <string name="menu_settings">Settings</string>
     <string name="actual_lang">en</string>
+    <string name="temp_in_day">Daytime temperature</string>
+    <string name="weather_for">Weather for:</string>
+    <string name="weather_info">More details</string>
+    <string name="delete_item">Deleted</string>
+    <string name="city_not_found">Sorry, city not found</string>
+    <string name="api_error">Sorry, weather services are currently unavailable</string>
+    <string name="db_delete_err">City not found in database</string>
+    <string name="city_error">City already added</string>
+    <string name="refresh">Refresh</string>
+    <string name="type_city_name">City name e.g. London</string>
+    <string name="cancle">Cancle</string>
+    <string name="add_button">Add</string>
+    <string name="units">Units</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+
+    <!-- Messages Preferences -->
+
+    <!-- Sync Preferences -->
+    <string name="attachment_summary_on">"Actual: Imperial "</string>
+    <string name="attachment_summary_off">Actual: Metric</string>
+    <string name="units_title">Select type of units</string>
+    <string name="internet_connection_1">Lost internet connection</string>
+    <string name="internet_connection_2">No Interenet connection</string>
+    <string name="weather_next_days">Next days</string>
 </resources>

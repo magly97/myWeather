@@ -7,10 +7,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.marlys.myweather.ItemClickListener;
+import com.marlys.myweather.listener.ItemClickListener;
 import com.marlys.myweather.R;
 
-public class CityWeatherHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class CityWeatherHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener  {
 
     private ImageView imageView;
     private TextView cityName;
@@ -21,6 +21,7 @@ public class CityWeatherHolder extends RecyclerView.ViewHolder implements View.O
     private TextView weatherSunrise;
     private TextView weatherSunset;
     private ItemClickListener itemClickListener;
+    private  ItemClickListener itemLongClickListener;
 
     public CityWeatherHolder(@NonNull View itemView) {
         super(itemView);
@@ -34,6 +35,7 @@ public class CityWeatherHolder extends RecyclerView.ViewHolder implements View.O
         this.weatherSunrise = itemView.findViewById(R.id.weather_sunrise_time);
         this.weatherSunset = itemView.findViewById(R.id.weather_sunset_time);
         itemView.setOnClickListener(this);
+        itemView.setOnLongClickListener(this);
 
     }
 
@@ -41,7 +43,11 @@ public class CityWeatherHolder extends RecyclerView.ViewHolder implements View.O
     public void onClick(View view) {
         this.itemClickListener.onItemClickListener(view, getLayoutPosition());
     }
-
+    @Override
+    public boolean onLongClick(View view) {
+        this.itemLongClickListener.onItemClickListener(view, getLayoutPosition());
+        return false;
+    }
     public ImageView getImageView() {
         return imageView;
     }
@@ -114,5 +120,12 @@ public class CityWeatherHolder extends RecyclerView.ViewHolder implements View.O
         this.itemClickListener = itemClickListener;
     }
 
+    public ItemClickListener getItemLongClickListener() {
+        return itemLongClickListener;
+    }
+
+    public void setItemLongClickListener(ItemClickListener itemLongClickListener) {
+        this.itemLongClickListener = itemLongClickListener;
+    }
 
 }

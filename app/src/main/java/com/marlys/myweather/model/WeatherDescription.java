@@ -1,6 +1,8 @@
 package com.marlys.myweather.model;
 
-public class WeatherDescription {
+import java.io.Serializable;
+
+public class WeatherDescription implements Serializable {
 
     private int id;
 

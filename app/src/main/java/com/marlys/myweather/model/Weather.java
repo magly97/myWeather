@@ -2,9 +2,10 @@ package com.marlys.myweather.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Weather {
+public class Weather implements Serializable {
 
     @SerializedName("dt")
     private int date;
@@ -25,6 +26,7 @@ public class Weather {
 
     private float clouds;
 
+    private float rain;
 
     @SerializedName("weather")
     private List<WeatherDescription> weatherDescriptions;
@@ -109,4 +111,11 @@ public class Weather {
         this.clouds = clouds;
     }
 
+    public float getRain() {
+        return rain;
+    }
+
+    public void setRain(float rain) {
+        this.rain = rain;
+    }
 }

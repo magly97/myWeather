@@ -8,4 +8,24 @@
     <string name="navigation_drawer_open">otowrz</string>
     <string name="navigation_drawer_close">zamknij</string>
     <string name="actual_lang">pl</string>
+    <string name="temp_in_day">Temperatura w ciągu dnia</string>
+    <string name="weather_for">"Pogoda dla: "</string>
+    <string name="weather_info">Więcej szczegółów</string>
+    <string name="delete_item">Usunięto</string>
+    <string name="city_not_found">Przepraszamy, nie znaleziono miasta</string>
+    <string name="api_error">Przepraszamy, wykryto problem z połączniem do serwera</string>
+    <string name="db_delete_err">Nie znaleziono miasta w bazie danych</string>
+    <string name="city_error">Miasto zostało dodane wcześniej</string>
+    <string name="refresh">Odświerz</string>
+    <string name="type_city_name">Nazwa miasta np. Kraków</string>
+    <string name="cancle">Cancle</string>
+    <string name="add_button">Dodaj</string>
+    <string name="units">Jednostki</string>
+    <string name="units_title">Wybierz rodzaj jednostek</string>
+    <string name="attachment_summary_off">Wybrane: Metryczne</string>
+    <string name="attachment_summary_on">Wybrane: Imperialne</string>
+    <string name="title_activity_settings">Ustawienia</string>
+    <string name="internet_connection_1">Utracono połączenie z Internetem</string>
+    <string name="internet_connection_2">Brak dostępu do Internetu</string>
+    <string name="weather_next_days">Next days</string>
 </resources>

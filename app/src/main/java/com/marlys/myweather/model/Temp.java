@@ -1,6 +1,8 @@
 package com.marlys.myweather.model;
 
-public class Temp {
+import java.io.Serializable;
+
+public class Temp implements Serializable {
 
     private float day;
 
